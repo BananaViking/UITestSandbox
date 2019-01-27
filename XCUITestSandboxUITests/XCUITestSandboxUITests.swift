@@ -27,23 +27,6 @@ class XCUITestSandboxUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        
-        let app = XCUIApplication()
-        app.textFields.element.tap()
-        
-        app.keys["t"].tap()
-        app.keys["e"].tap()
-        app.keys["s"].tap()
-        app.keys["t"].tap()
-        app.keyboards.buttons["Return"].tap()
-        
-        app.sliders["Completion"].swipeRight()
-        app.segmentedControls.buttons["Omega"].tap()
-        app.buttons["Blue"].tap()
-        app.alerts["Blue"].buttons["OK"].tap()
-    }
     
     func testLabelCopiesTextField() {
         
@@ -76,6 +59,13 @@ class XCUITestSandboxUITests: XCTestCase {
         app.buttons["Blue"].tap()
         XCTAssertTrue(app.alerts["Blue"].exists)
         app.alerts["Blue"].buttons["OK"].tap()
+    }
+    
+    func testSegmentedControl() {
+        let app = XCUIApplication()
+        app.segmentedControls.buttons["Omega"].tap()
+        
+        XCTAssert(app.staticTexts["Omega"].exists)
     }
 
 }
