@@ -61,11 +61,11 @@ class XCUITestSandboxUITests: XCTestCase {
         app.alerts["Blue"].buttons["OK"].tap()
     }
     
-    func testSegmentedControl() {
-        let app = XCUIApplication()
-        app.segmentedControls.buttons["Omega"].tap()
-        
-        XCTAssert(app.staticTexts["Omega"].exists)
-    }
+//    func testSegmentedControl() {
+//        let app = XCUIApplication()
+//        app.segmentedControls.buttons["Omega"].tap()
+//        
+//        XCTAssertTrue(app.staticTexts["Omega"].exists)
+//    }
 
 }
